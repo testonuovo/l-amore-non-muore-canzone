@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Karaoke - L'amore non muore</title>
+<style>
+  body { 
+    background-color:blue;
+    color: #333; 
+    font-family:Times New Roman;
+    text-align: center; 
+    padding-top: 50px; 
+  }
+  #lyrics { 
+    font-size: 1.8em; 
+    line-height: 2em; 
+    max-width: 800px; 
+    margin: 0 auto; 
+    color:white;
+   }
+  .highlight { 
+    color: #ff4500; 
+    font-weight: bold; 
+  }
+</style>
+</head>
+<body>
+<h1>Karaoke: L'amore non muore</h1>
+
+<audio id="bgMusic" src="musica.mp3" controls autoplay></audio>
+
+<div id="lyrics">
+  <span id="line1">l'amore è tutto, l'amore è vita, l'amore è gioia, l'amore è luce</span><br>
+  <span id="line2">vivi la tua vita come vuoi ma riempila d'amore</span><br>
+  <span id="line3">l'amore finisce, una storia finisce, ma l'amore non muore</span><br>
+  <span id="line4">l'amore non muore</span><br>
+  <span id="line5">l'amore cambia</span><br>
+  <span id="line6">l'amore trasforma</span><br>
+  <span id="line7">l'amore non muore</span><br>
+  <span id="line8">vivi il tuo giorno come una missione, una missione sì, ma una missione d'amore</span><br>
+  <span id="line9">l'amore è bello, vivilo ogni giorno</span><br>
+  <span id="line10">perché se una storia finisce, l'amore no, l'amore non muore</span><br>
+  <span id="line11">l'amore non muore</span><br>
+  <span id="line12">l'amore trasforma, cambia</span><br>
+  <span id="line13">l'amore non muore</span><br>
+  <span id="line14">l'amore non muore</span><br>
+</div>
+
+<script>
+const lines = [
+  "line1","line2","line3","line4","line5","line6","line7",
+  "line8","line9","line10","line11","line12","line13","line14"
+];
+
+let index = 0;
+
+function highlightLine() {
+  if(index > 0) document.getElementById(lines[index-1]).classList.remove('highlight');
+  if(index < lines.length){
+    document.getElementById(lines[index]).classList.add('highlight');
+    index++;
+    setTimeout(highlightLine, 4000); // 4 secondi per verso, puoi modificare
+  }
+}
+
+highlightLine();
+</script>
+</body>
+</html>
